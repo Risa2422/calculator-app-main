@@ -1,3 +1,68 @@
+* {
+  box-sizing: border-box;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
 
+.container {
+  margin: 100px auto;
+  padding: 10px;
+  width: 400px;
+}
+
+header {
+  display: flex;
+  justify-content: space-around;
+}
+header .theme {
+  display: flex;
+  gap: 20px;
+}
+header .theme .title {
+  display: flex;
+  align-items: end;
+}
+header .theme .preference-buttons {
+  width: 70px;
+  height: 40px;
+  display: flex;
+  flex-direction: column;
+}
+header .theme .preference-buttons .type {
+  display: flex;
+  flex: 1;
+  justify-content: space-around;
+  font-size: 12px;
+  height: 20px;
+}
+header .theme .preference-buttons .theme-button {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: hsl(0, 5%, 81%);
+  border-radius: 30px;
+  padding: 0 5px;
+}
+header .theme .preference-buttons .theme-button button {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background-color: hsl(25, 98%, 40%);
+  border: none;
+}
+
+.result-wrapper {
+  height: 60px;
+  background-color: hsl(268, 75%, 9%);
+  border-radius: 10px;
+}
+.result-wrapper .result {
+  padding: 10px;
+  text-align: end;
+  font-size: 30px;
+  color: hsl(0, 0%, 100%);
+}
 
 /*# sourceMappingURL=style.css.map */
