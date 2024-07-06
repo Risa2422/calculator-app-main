@@ -1,3 +1,5 @@
+@use "variable";
+
 * {
   box-sizing: border-box;
   list-style: none;
@@ -6,17 +8,27 @@
 }
 
 body {
+  font-family: variable.$font-family-leagueSpartan;
 }
 
 .container {
   margin: 100px auto;
-  padding: 10px;
-  width: 400px;
+  padding: 20px;
+  max-width: 400px;
+
+  &.theme-dark {
+    background-color: variable.$color-bg-fiord;
+  }
 }
 
 header {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  align-items: end;
+
+  .theme-dark & {
+    color: white;
+  }
 
   .theme {
     display: flex;
@@ -25,11 +37,12 @@ header {
     .title {
       display: flex;
       align-items: end;
+      font-size: 12px;
     }
 
     .preference-buttons {
       width: 70px;
-      height: 40px;
+      height: 45px;
       display: flex;
       flex-direction: column;
 
@@ -37,8 +50,7 @@ header {
         display: flex;
         flex: 1;
         justify-content: space-around;
-        font-size: 12px;
-        height: 20px;
+        font-size: 15px;
       }
 
       .theme-button {
@@ -50,12 +62,20 @@ header {
         border-radius: 30px;
         padding: 0 5px;
 
+        .theme-dark & {
+          background-color: variable.$color-bg-ebonyClay;
+        }
+
         button {
           width: 13px;
           height: 13px;
           border-radius: 50%;
           background-color: hsl(25, 98%, 40%);
           border: none;
+
+          .theme-dark & {
+            background-color: variable.$color-key-persianred;
+          }
         }
       }
     }
@@ -63,14 +83,103 @@ header {
 }
 
 .result-wrapper {
-  height: 60px;
+  height: 70px;
+  margin-top: 20px;
   background-color: hsl(268, 75%, 9%);
   border-radius: 10px;
 
+  .theme-dark & {
+    background-color: variable.$color-bg-mirage;
+  }
+
   .result {
-    padding: 10px;
+    height: 100%;
+    padding: 20px;
     text-align: end;
-    font-size: 30px;
+    font-size: 35px;
     color: hsl(0, 0%, 100%);
+  }
+}
+
+.keys-wrapper {
+  border-radius: 10px;
+  padding-top: 20px;
+  background-color: variable.$color-bg-fiord;
+
+  .keys {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 60px;
+    border-radius: 10px;
+    gap: 10px;
+    padding: 20px;
+
+    .theme-dark & {
+      background-color: variable.$color-bg-ebonyClay;
+    }
+
+    button {
+      padding: 5px;
+      border-radius: 5px;
+      background-color: white;
+      border: solid black 1px;
+      display: flex;
+      height: 55px;
+      justify-content: center;
+      align-items: center;
+      font-size: 30px;
+      font-weight: 800;
+
+      .theme-dark & {
+        box-shadow: 0px 5px variable.$color-key-thatch;
+        background-color: variable.$color-key-pearlbush;
+        color: variable.$color-text-riverbed;
+        border: 1px solid variable.$color-key-pearlbush;
+      }
+
+      .theme-green & {
+        background-color: green;
+        color: white;
+      }
+
+      &.del {
+        font-size: 20px;
+        .theme-dark & {
+          box-shadow: 0px 5px variable.$color-key-eastBay;
+          background-color: variable.$color-key-lynch;
+          color: variable.$color-text-white;
+          border: 1px solid variable.$color-key-lynch;
+        }
+      }
+
+      &.reset {
+        font-size: 20px;
+        .theme-dark & {
+          box-shadow: 0px 5px variable.$color-key-eastBay;
+          background-color: variable.$color-key-lynch;
+          color: variable.$color-text-white;
+          border: 1px solid variable.$color-key-lynch;
+        }
+      }
+
+      &.equal {
+        font-size: 20px;
+        .theme-dark & {
+          box-shadow: 0px 5px variable.$color-key-oldbrick;
+          background-color: variable.$color-key-persianred;
+          color: variable.$color-text-white;
+          border: 1px solid variable.$color-key-persianred;
+        }
+      }
+    }
+  }
+
+  p {
+    font-size: 25px;
+  }
+
+  .reset,
+  .equal {
+    grid-column: span 2;
   }
 }
