@@ -12,10 +12,13 @@ body {
 .container {
   margin: 100px auto;
   padding: 20px;
-  max-width: 400px;
+  max-width: 350px;
 }
 .container.theme-dark {
   background-color: hsl(222, 26%, 31%);
+}
+.container.theme-light {
+  background-color: #ededed;
 }
 
 header {
@@ -34,6 +37,7 @@ header .theme .title {
   display: flex;
   align-items: end;
   font-size: 12px;
+  font-weight: 600;
 }
 header .theme .preference-buttons {
   width: 70px;
@@ -45,7 +49,8 @@ header .theme .preference-buttons .type {
   display: flex;
   flex: 1;
   justify-content: space-around;
-  font-size: 15px;
+  font-size: 13px;
+  font-weight: 600;
 }
 header .theme .preference-buttons .theme-button {
   flex: 1;
@@ -59,12 +64,18 @@ header .theme .preference-buttons .theme-button {
 .theme-dark header .theme .preference-buttons .theme-button {
   background-color: hsl(223, 31%, 20%);
 }
+.theme-light header .theme .preference-buttons .theme-button {
+  background-color: #d1cccc;
+}
 header .theme .preference-buttons .theme-button button {
   width: 13px;
   height: 13px;
   border-radius: 50%;
   background-color: hsl(25, 98%, 40%);
   border: none;
+}
+.theme-dark header .theme .preference-buttons .theme-button button {
+  background-color: hsl(6, 63%, 50%);
 }
 .theme-dark header .theme .preference-buttons .theme-button button {
   background-color: hsl(6, 63%, 50%);
@@ -79,18 +90,24 @@ header .theme .preference-buttons .theme-button button {
 .theme-dark .result-wrapper {
   background-color: hsl(224, 36%, 15%);
 }
+.theme-light .result-wrapper {
+  background-color: #ffffff;
+}
 .result-wrapper .result {
   height: 100%;
   padding: 20px;
   text-align: end;
   font-size: 35px;
-  color: hsl(0, 0%, 100%);
+  font-family: "League Spartan", sans-serif;
+  font-weight: 600;
+}
+.theme-light .result-wrapper .result {
+  color: #35352c;
 }
 
 .keys-wrapper {
   border-radius: 10px;
   padding-top: 20px;
-  background-color: hsl(222, 26%, 31%);
 }
 .keys-wrapper .keys {
   display: grid;
@@ -103,6 +120,9 @@ header .theme .preference-buttons .theme-button button {
 .theme-dark .keys-wrapper .keys {
   background-color: hsl(223, 31%, 20%);
 }
+.theme-light .keys-wrapper .keys {
+  background-color: #d1cccc;
+}
 .keys-wrapper .keys button {
   padding: 5px;
   border-radius: 5px;
@@ -113,34 +133,38 @@ header .theme .preference-buttons .theme-button button {
   justify-content: center;
   align-items: center;
   font-size: 30px;
-  font-weight: 800;
+  font-family: "League Spartan", sans-serif;
+  font-weight: 600;
 }
 .theme-dark .keys-wrapper .keys button {
   box-shadow: 0px 5px hsl(28, 16%, 65%);
   background-color: hsl(30, 25%, 89%);
-  color: hsl(221, 14%, 31%);
+  color: #444b5a;
+  border: 1px solid hsl(30, 25%, 89%);
+}
+.theme-light .keys-wrapper .keys button {
+  box-shadow: 0px 5px hsl(28, 16%, 65%);
+  background-color: #e5e4e1;
+  color: #444b5a;
   border: 1px solid hsl(30, 25%, 89%);
 }
 .theme-green .keys-wrapper .keys button {
   background-color: green;
   color: white;
 }
-.keys-wrapper .keys button.del {
+.keys-wrapper .keys button.del, .keys-wrapper .keys button.reset {
   font-size: 20px;
 }
-.theme-dark .keys-wrapper .keys button.del {
+.theme-dark .keys-wrapper .keys button.del, .theme-dark .keys-wrapper .keys button.reset {
   box-shadow: 0px 5px hsl(224, 28%, 35%);
   background-color: hsl(225, 21%, 49%);
-  color: hsl(0, 0%, 100%);
+  color: #ffffff;
   border: 1px solid hsl(225, 21%, 49%);
 }
-.keys-wrapper .keys button.reset {
-  font-size: 20px;
-}
-.theme-dark .keys-wrapper .keys button.reset {
-  box-shadow: 0px 5px hsl(224, 28%, 35%);
-  background-color: hsl(225, 21%, 49%);
-  color: hsl(0, 0%, 100%);
+.theme-light .keys-wrapper .keys button.del, .theme-light .keys-wrapper .keys button.reset {
+  box-shadow: 0px 5px #1b5f65;
+  background-color: #388187;
+  color: #ffffff;
   border: 1px solid hsl(225, 21%, 49%);
 }
 .keys-wrapper .keys button.equal {
@@ -149,7 +173,13 @@ header .theme .preference-buttons .theme-button button {
 .theme-dark .keys-wrapper .keys button.equal {
   box-shadow: 0px 5px hsl(6, 70%, 34%);
   background-color: hsl(6, 63%, 50%);
-  color: hsl(0, 0%, 100%);
+  color: #ffffff;
+  border: 1px solid hsl(6, 63%, 50%);
+}
+.theme-light .keys-wrapper .keys button.equal {
+  box-shadow: 0px 5px #893901;
+  background-color: #ca5502;
+  color: #ffffff;
   border: 1px solid hsl(6, 63%, 50%);
 }
 .keys-wrapper p {

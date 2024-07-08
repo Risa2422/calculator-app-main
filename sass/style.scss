@@ -14,11 +14,15 @@ body {
 .container {
   margin: 100px auto;
   padding: 20px;
-  max-width: 400px;
+  max-width: 350px;
 
   &.theme-dark {
     background-color: variable.$color-bg-fiord;
   }
+
+  &.theme-light {
+    background-color: variable.$color-bg-gallery;
+  } 
 }
 
 header {
@@ -38,6 +42,7 @@ header {
       display: flex;
       align-items: end;
       font-size: 12px;
+      font-weight: 600;
     }
 
     .preference-buttons {
@@ -50,7 +55,8 @@ header {
         display: flex;
         flex: 1;
         justify-content: space-around;
-        font-size: 15px;
+        font-size: 13px;
+        font-weight: 600;
       }
 
       .theme-button {
@@ -66,12 +72,20 @@ header {
           background-color: variable.$color-bg-ebonyClay;
         }
 
+        .theme-light & {
+          background-color: variable.$color-bg-swissCoffee;
+        }
+
         button {
           width: 13px;
           height: 13px;
           border-radius: 50%;
           background-color: hsl(25, 98%, 40%);
           border: none;
+
+          .theme-dark & {
+            background-color: variable.$color-key-persianred;
+          }
 
           .theme-dark & {
             background-color: variable.$color-key-persianred;
@@ -92,19 +106,27 @@ header {
     background-color: variable.$color-bg-mirage;
   }
 
+  .theme-light & {
+    background-color: variable.$color-bg-white;
+  }
+
   .result {
     height: 100%;
     padding: 20px;
     text-align: end;
     font-size: 35px;
-    color: hsl(0, 0%, 100%);
+    font-family: variable.$font-family-leagueSpartan;
+    font-weight: 600;
+
+    .theme-light & {
+      color: variable.$color-text-armadillo;
+    }
   }
 }
 
 .keys-wrapper {
   border-radius: 10px;
   padding-top: 20px;
-  background-color: variable.$color-bg-fiord;
 
   .keys {
     display: grid;
@@ -118,6 +140,10 @@ header {
       background-color: variable.$color-bg-ebonyClay;
     }
 
+    .theme-light & {
+      background-color: variable.$color-bg-swissCoffee;
+    }
+
     button {
       padding: 5px;
       border-radius: 5px;
@@ -128,11 +154,19 @@ header {
       justify-content: center;
       align-items: center;
       font-size: 30px;
-      font-weight: 800;
+      font-family: variable.$font-family-leagueSpartan;
+      font-weight: 600;
 
       .theme-dark & {
         box-shadow: 0px 5px variable.$color-key-thatch;
         background-color: variable.$color-key-pearlbush;
+        color: variable.$color-text-riverbed;
+        border: 1px solid variable.$color-key-pearlbush;
+      }
+
+      .theme-light & {
+        box-shadow: 0px 5px variable.$color-key-thatch;
+        background-color: variable.$color-key-westar;
         color: variable.$color-text-riverbed;
         border: 1px solid variable.$color-key-pearlbush;
       }
@@ -142,7 +176,8 @@ header {
         color: white;
       }
 
-      &.del {
+      &.del,
+      &.reset {
         font-size: 20px;
         .theme-dark & {
           box-shadow: 0px 5px variable.$color-key-eastBay;
@@ -150,13 +185,10 @@ header {
           color: variable.$color-text-white;
           border: 1px solid variable.$color-key-lynch;
         }
-      }
 
-      &.reset {
-        font-size: 20px;
-        .theme-dark & {
-          box-shadow: 0px 5px variable.$color-key-eastBay;
-          background-color: variable.$color-key-lynch;
+        .theme-light & {
+          box-shadow: 0px 5px variable.$color-key-blumine;
+          background-color: variable.$color-key-paradiso;
           color: variable.$color-text-white;
           border: 1px solid variable.$color-key-lynch;
         }
@@ -167,6 +199,13 @@ header {
         .theme-dark & {
           box-shadow: 0px 5px variable.$color-key-oldbrick;
           background-color: variable.$color-key-persianred;
+          color: variable.$color-text-white;
+          border: 1px solid variable.$color-key-persianred;
+        }
+
+        .theme-light & {
+          box-shadow: 0px 5px variable.$color-key-peruTan;
+          background-color: variable.$color-key-burntOrange;
           color: variable.$color-text-white;
           border: 1px solid variable.$color-key-persianred;
         }
