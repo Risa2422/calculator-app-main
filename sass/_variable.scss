@@ -8,8 +8,11 @@ $color-bg-swissCoffee: #d1cccc;
 $color-bg-gallery: #ededed;
 $color-bg-white: #ffffff;
 
+$color-bg-violet: #160628;
+$color-bg-darkViolet: #1d0934;
+
 // key-color
-$color-key-lynch: hsl(225, 21%, 49%);
+$color-key-lynch: hwb(225 39% 41%);
 $color-key-eastBay: hsl(224, 28%, 35%);
 $color-key-persianred: hsl(6, 63%, 50%);
 $color-key-oldbrick: hsl(6, 70%, 34%);
@@ -22,10 +25,19 @@ $color-key-burntOrange: #ca5502;
 $color-key-peruTan: #893901;
 $color-key-westar: #e5e4e1;
 
+$color-key-windsor: #58077d;
+$color-key-electricViolet: #bc15f4;
+$color-key-robinsEggBlue: #00e0d1;
+$color-key-aquamarine: #6cf9f2;
+$color-key-grape: #341c4f;
+$color-key-seance: #871c9c;
+
 // text
 $color-text-riverbed: #444b5a;
 $color-text-white: #ffffff;
 $color-text-armadillo: #35352c;
+$color-text-yellow: #ffe53d;
+$color-text-armadillo: #1b2428;
 
 // font family
 $font-family-leagueSpartan: "League Spartan", sans-serif;

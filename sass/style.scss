@@ -9,20 +9,27 @@
 
 body {
   font-family: variable.$font-family-leagueSpartan;
-}
+  display: grid;
+  place-items: center;
+  height: 100vh;
 
-.container {
-  margin: 100px auto;
-  padding: 20px;
-  max-width: 350px;
+  &.theme-basic {
+    background-color: variable.$color-bg-fiord;
+  }
 
   &.theme-dark {
-    background-color: variable.$color-bg-fiord;
+    background-color: variable.$color-bg-violet;
   }
 
   &.theme-light {
     background-color: variable.$color-bg-gallery;
-  } 
+  }
+}
+
+.container {
+  padding: 20px;
+  max-width: 350px;
+  width: 100%;
 }
 
 header {
@@ -30,8 +37,12 @@ header {
   justify-content: space-between;
   align-items: end;
 
+  .theme-basic & {
+    color: variable.$color-text-white;
+  }
+
   .theme-dark & {
-    color: white;
+    color: variable.$color-text-yellow;
   }
 
   .theme {
@@ -64,12 +75,15 @@ header {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        background-color: hsl(0, 5%, 81%);
         border-radius: 30px;
         padding: 0 5px;
 
-        .theme-dark & {
+        .theme-basic & {
           background-color: variable.$color-bg-ebonyClay;
+        }
+
+        .theme-dark & {
+          background-color: variable.$color-key-windsor;
         }
 
         .theme-light & {
@@ -80,14 +94,13 @@ header {
           width: 13px;
           height: 13px;
           border-radius: 50%;
-          background-color: hsl(25, 98%, 40%);
           border: none;
 
           .theme-dark & {
-            background-color: variable.$color-key-persianred;
+            background-color: variable.$color-key-robinsEggBlue;
           }
 
-          .theme-dark & {
+          .theme-light & {
             background-color: variable.$color-key-persianred;
           }
         }
@@ -99,11 +112,15 @@ header {
 .result-wrapper {
   height: 70px;
   margin-top: 20px;
-  background-color: hsl(268, 75%, 9%);
   border-radius: 10px;
+  padding: 20px;
+
+  .theme-basic & {
+    background-color: variable.$color-bg-mirage;
+  }
 
   .theme-dark & {
-    background-color: variable.$color-bg-mirage;
+    background-color: variable.$color-bg-darkViolet;
   }
 
   .theme-light & {
@@ -112,11 +129,19 @@ header {
 
   .result {
     height: 100%;
-    padding: 20px;
-    text-align: end;
+    text-align: right;
     font-size: 35px;
-    font-family: variable.$font-family-leagueSpartan;
     font-weight: 600;
+    direction: rtl;
+    overflow: hidden;
+
+    .theme-basic & {
+      color: variable.$color-text-white;
+    }
+
+    .theme-dark & {
+      color: variable.$color-text-yellow;
+    }
 
     .theme-light & {
       color: variable.$color-text-armadillo;
@@ -136,8 +161,12 @@ header {
     gap: 10px;
     padding: 20px;
 
-    .theme-dark & {
+    .theme-basic & {
       background-color: variable.$color-bg-ebonyClay;
+    }
+
+    .theme-dark & {
+      background-color: variable.$color-bg-darkViolet;
     }
 
     .theme-light & {
@@ -148,7 +177,7 @@ header {
       padding: 5px;
       border-radius: 5px;
       background-color: white;
-      border: solid black 1px;
+      border: none;
       display: flex;
       height: 55px;
       justify-content: center;
@@ -157,57 +186,66 @@ header {
       font-family: variable.$font-family-leagueSpartan;
       font-weight: 600;
 
-      .theme-dark & {
-        box-shadow: 0px 5px variable.$color-key-thatch;
+      .theme-basic & {
         background-color: variable.$color-key-pearlbush;
         color: variable.$color-text-riverbed;
-        border: 1px solid variable.$color-key-pearlbush;
+        border-bottom: 5px solid variable.$color-key-thatch;
+      }
+
+      .theme-dark & {
+        background-color: variable.$color-key-grape;
+        color: variable.$color-text-yellow;
+        border-bottom: 5px solid variable.$color-key-seance;
       }
 
       .theme-light & {
-        box-shadow: 0px 5px variable.$color-key-thatch;
         background-color: variable.$color-key-westar;
         color: variable.$color-text-riverbed;
-        border: 1px solid variable.$color-key-pearlbush;
-      }
-
-      .theme-green & {
-        background-color: green;
-        color: white;
+        border-bottom: 5px solid variable.$color-key-thatch;
       }
 
       &.del,
       &.reset {
         font-size: 20px;
-        .theme-dark & {
-          box-shadow: 0px 5px variable.$color-key-eastBay;
+
+        .theme-basic & {
           background-color: variable.$color-key-lynch;
           color: variable.$color-text-white;
-          border: 1px solid variable.$color-key-lynch;
+          border-bottom: 5px solid variable.$color-bg-fiord;
+        }
+
+        .theme-dark & {
+          background-color: variable.$color-key-windsor;
+          color: variable.$color-text-white;
+          border-bottom: 5px solid variable.$color-key-electricViolet;
         }
 
         .theme-light & {
-          box-shadow: 0px 5px variable.$color-key-blumine;
           background-color: variable.$color-key-paradiso;
           color: variable.$color-text-white;
-          border: 1px solid variable.$color-key-lynch;
+          border-bottom: 5px solid variable.$color-key-lynch;
         }
       }
 
       &.equal {
         font-size: 20px;
-        .theme-dark & {
-          box-shadow: 0px 5px variable.$color-key-oldbrick;
+
+        .theme-basic & {
           background-color: variable.$color-key-persianred;
           color: variable.$color-text-white;
-          border: 1px solid variable.$color-key-persianred;
+          border-bottom: 5px solid variable.$color-key-peruTan;
+        }
+
+        .theme-dark & {
+          background-color: variable.$color-key-robinsEggBlue;
+          color: variable.$color-text-white;
+          border-bottom: 5px solid variable.$color-key-lynch;
         }
 
         .theme-light & {
-          box-shadow: 0px 5px variable.$color-key-peruTan;
           background-color: variable.$color-key-burntOrange;
           color: variable.$color-text-white;
-          border: 1px solid variable.$color-key-persianred;
+          border-bottom: 5px solid variable.$color-key-persianred;
         }
       }
     }
@@ -220,5 +258,75 @@ header {
   .reset,
   .equal {
     grid-column: span 2;
+  }
+}
+
+.theme-button {
+  position: relative;
+
+  input[type="radio"] {
+    width: 15px;
+    height: 15px;
+    opacity: 0;
+  }
+
+  .circle {
+    position: absolute;
+    top: 3px;
+    left: 5px;
+    width: 15px;
+    height: 15px;
+    background-color: variable.$color-key-persianred;
+    border-radius: 50%;
+    transition: all 0.3s linear;
+    pointer-events: none;
+  }
+
+  input[type="radio"]:nth-child(1):checked {
+    ~ .circle {
+      left: 5;
+      background-color: variable.$color-key-persianred;
+    }
+  }
+
+  input[type="radio"]:nth-child(2):checked {
+    ~ .circle {
+      left: 25px;
+      background-color: variable.$color-key-burntOrange;
+    }
+  }
+
+  input[type="radio"]:nth-child(3):checked {
+    ~ .circle {
+      left: 50px;
+      background-color: variable.$color-key-robinsEggBlue;
+    }
+  }
+}
+
+.number,
+.del,
+.add,
+.reset,
+.div,
+.mul,
+.equal,
+.sub {
+  &.pressed {
+    animation: btnPress 0.5s ease-in;
+  }
+}
+
+@keyframes btnPress {
+  0%,
+  100% {
+    height: 55px;
+    border-bottom-width: 5px;
+    transform: translateY(0);
+  }
+  50% {
+    height: 50px;
+    border-bottom-width: 0;
+    transform: translateY(5px);
   }
 }

@@ -7,18 +7,24 @@
 
 body {
   font-family: "League Spartan", sans-serif;
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
+body.theme-basic {
+  background-color: hsl(222, 26%, 31%);
+}
+body.theme-dark {
+  background-color: #160628;
+}
+body.theme-light {
+  background-color: #ededed;
 }
 
 .container {
-  margin: 100px auto;
   padding: 20px;
   max-width: 350px;
-}
-.container.theme-dark {
-  background-color: hsl(222, 26%, 31%);
-}
-.container.theme-light {
-  background-color: #ededed;
+  width: 100%;
 }
 
 header {
@@ -26,8 +32,11 @@ header {
   justify-content: space-between;
   align-items: end;
 }
+.theme-basic header {
+  color: #ffffff;
+}
 .theme-dark header {
-  color: white;
+  color: #ffe53d;
 }
 header .theme {
   display: flex;
@@ -57,12 +66,14 @@ header .theme .preference-buttons .theme-button {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: hsl(0, 5%, 81%);
   border-radius: 30px;
   padding: 0 5px;
 }
-.theme-dark header .theme .preference-buttons .theme-button {
+.theme-basic header .theme .preference-buttons .theme-button {
   background-color: hsl(223, 31%, 20%);
+}
+.theme-dark header .theme .preference-buttons .theme-button {
+  background-color: #58077d;
 }
 .theme-light header .theme .preference-buttons .theme-button {
   background-color: #d1cccc;
@@ -71,38 +82,46 @@ header .theme .preference-buttons .theme-button button {
   width: 13px;
   height: 13px;
   border-radius: 50%;
-  background-color: hsl(25, 98%, 40%);
   border: none;
 }
 .theme-dark header .theme .preference-buttons .theme-button button {
-  background-color: hsl(6, 63%, 50%);
+  background-color: #00e0d1;
 }
-.theme-dark header .theme .preference-buttons .theme-button button {
+.theme-light header .theme .preference-buttons .theme-button button {
   background-color: hsl(6, 63%, 50%);
 }
 
 .result-wrapper {
   height: 70px;
   margin-top: 20px;
-  background-color: hsl(268, 75%, 9%);
   border-radius: 10px;
+  padding: 20px;
+}
+.theme-basic .result-wrapper {
+  background-color: hsl(224, 36%, 15%);
 }
 .theme-dark .result-wrapper {
-  background-color: hsl(224, 36%, 15%);
+  background-color: #1d0934;
 }
 .theme-light .result-wrapper {
   background-color: #ffffff;
 }
 .result-wrapper .result {
   height: 100%;
-  padding: 20px;
-  text-align: end;
+  text-align: right;
   font-size: 35px;
-  font-family: "League Spartan", sans-serif;
   font-weight: 600;
+  direction: rtl;
+  overflow: hidden;
+}
+.theme-basic .result-wrapper .result {
+  color: #ffffff;
+}
+.theme-dark .result-wrapper .result {
+  color: #ffe53d;
 }
 .theme-light .result-wrapper .result {
-  color: #35352c;
+  color: #1b2428;
 }
 
 .keys-wrapper {
@@ -117,8 +136,11 @@ header .theme .preference-buttons .theme-button button {
   gap: 10px;
   padding: 20px;
 }
-.theme-dark .keys-wrapper .keys {
+.theme-basic .keys-wrapper .keys {
   background-color: hsl(223, 31%, 20%);
+}
+.theme-dark .keys-wrapper .keys {
+  background-color: #1d0934;
 }
 .theme-light .keys-wrapper .keys {
   background-color: #d1cccc;
@@ -127,7 +149,7 @@ header .theme .preference-buttons .theme-button button {
   padding: 5px;
   border-radius: 5px;
   background-color: white;
-  border: solid black 1px;
+  border: none;
   display: flex;
   height: 55px;
   justify-content: center;
@@ -136,51 +158,56 @@ header .theme .preference-buttons .theme-button button {
   font-family: "League Spartan", sans-serif;
   font-weight: 600;
 }
-.theme-dark .keys-wrapper .keys button {
-  box-shadow: 0px 5px hsl(28, 16%, 65%);
+.theme-basic .keys-wrapper .keys button {
   background-color: hsl(30, 25%, 89%);
   color: #444b5a;
-  border: 1px solid hsl(30, 25%, 89%);
+  border-bottom: 5px solid hsl(28, 16%, 65%);
+}
+.theme-dark .keys-wrapper .keys button {
+  background-color: #341c4f;
+  color: #ffe53d;
+  border-bottom: 5px solid #871c9c;
 }
 .theme-light .keys-wrapper .keys button {
-  box-shadow: 0px 5px hsl(28, 16%, 65%);
   background-color: #e5e4e1;
   color: #444b5a;
-  border: 1px solid hsl(30, 25%, 89%);
-}
-.theme-green .keys-wrapper .keys button {
-  background-color: green;
-  color: white;
+  border-bottom: 5px solid hsl(28, 16%, 65%);
 }
 .keys-wrapper .keys button.del, .keys-wrapper .keys button.reset {
   font-size: 20px;
 }
-.theme-dark .keys-wrapper .keys button.del, .theme-dark .keys-wrapper .keys button.reset {
-  box-shadow: 0px 5px hsl(224, 28%, 35%);
-  background-color: hsl(225, 21%, 49%);
+.theme-basic .keys-wrapper .keys button.del, .theme-basic .keys-wrapper .keys button.reset {
+  background-color: hwb(225 39% 41%);
   color: #ffffff;
-  border: 1px solid hsl(225, 21%, 49%);
+  border-bottom: 5px solid hsl(222, 26%, 31%);
+}
+.theme-dark .keys-wrapper .keys button.del, .theme-dark .keys-wrapper .keys button.reset {
+  background-color: #58077d;
+  color: #ffffff;
+  border-bottom: 5px solid #bc15f4;
 }
 .theme-light .keys-wrapper .keys button.del, .theme-light .keys-wrapper .keys button.reset {
-  box-shadow: 0px 5px #1b5f65;
   background-color: #388187;
   color: #ffffff;
-  border: 1px solid hsl(225, 21%, 49%);
+  border-bottom: 5px solid hwb(225 39% 41%);
 }
 .keys-wrapper .keys button.equal {
   font-size: 20px;
 }
-.theme-dark .keys-wrapper .keys button.equal {
-  box-shadow: 0px 5px hsl(6, 70%, 34%);
+.theme-basic .keys-wrapper .keys button.equal {
   background-color: hsl(6, 63%, 50%);
   color: #ffffff;
-  border: 1px solid hsl(6, 63%, 50%);
+  border-bottom: 5px solid #893901;
+}
+.theme-dark .keys-wrapper .keys button.equal {
+  background-color: #00e0d1;
+  color: #ffffff;
+  border-bottom: 5px solid hwb(225 39% 41%);
 }
 .theme-light .keys-wrapper .keys button.equal {
-  box-shadow: 0px 5px #893901;
   background-color: #ca5502;
   color: #ffffff;
-  border: 1px solid hsl(6, 63%, 50%);
+  border-bottom: 5px solid hsl(6, 63%, 50%);
 }
 .keys-wrapper p {
   font-size: 25px;
@@ -188,6 +215,62 @@ header .theme .preference-buttons .theme-button button {
 .keys-wrapper .reset,
 .keys-wrapper .equal {
   grid-column: span 2;
+}
+
+.theme-button {
+  position: relative;
+}
+.theme-button input[type=radio] {
+  width: 15px;
+  height: 15px;
+  opacity: 0;
+}
+.theme-button .circle {
+  position: absolute;
+  top: 3px;
+  left: 5px;
+  width: 15px;
+  height: 15px;
+  background-color: hsl(6, 63%, 50%);
+  border-radius: 50%;
+  transition: all 0.3s linear;
+  pointer-events: none;
+}
+.theme-button input[type=radio]:nth-child(1):checked ~ .circle {
+  left: 5;
+  background-color: hsl(6, 63%, 50%);
+}
+.theme-button input[type=radio]:nth-child(2):checked ~ .circle {
+  left: 25px;
+  background-color: #ca5502;
+}
+.theme-button input[type=radio]:nth-child(3):checked ~ .circle {
+  left: 50px;
+  background-color: #00e0d1;
+}
+
+.number.pressed,
+.del.pressed,
+.add.pressed,
+.reset.pressed,
+.div.pressed,
+.mul.pressed,
+.equal.pressed,
+.sub.pressed {
+  animation: btnPress 0.5s ease-in;
+}
+
+@keyframes btnPress {
+  0%, 100% {
+    height: 55px;
+    border-bottom-width: 5px;
+    transform: translateY(0);
+  }
+  50% {
+    height: 50px;
+    border-bottom-width: 0;
+    transform: translateY(5px);
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
